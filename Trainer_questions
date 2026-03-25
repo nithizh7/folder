@@ -1,0 +1,140 @@
+1. Introduction
+2. About project
+3. Hibernate
+4. Spring Data JPA
+5. Inner Join, Outer Join
+6. yml file
+7. pom.xml
+8. CASCADE_TYPE
+9. @JsonManagedReference, @JsonBackReference (based on project)
+10. Spring Security
+11. Annotations about project
+12. Spring Initializer
+13.	 Bean is threadsafe or not?
+14. Application.proerties-> can we add more than one application.properties in a single project?
+15. Explain ORM from scratch
+16. Design Patterns of Spring boot
+17. IOC Container
+18. @ExceptionHandler
+ 
+---------------------------------------------
+ 
+. validation 
+2. exception handling
+3. logger
+4. comments 
+5. authentication and authorization
+6. testing (service +controller)
+Core Java
+1. OOPS 
+2. String , string buffer, string builder
+3. exception handling
+4. collection framework (List, Set , Queue)
+5. Map
+6.Functional Interface
+7.Stream API(very important)
+8. method reference
+9. Optional(important)
+Spring core:
+1. what is Dependency Injection ...explain with example
+2. Ioc container
+3. how many ways we can configure beans
+4. @Component, @Service, @Autowried, @Bean, @ComponetScan, @PropertySource, @Qualifier, @Primary
+
+Spring REST
+1. web application
+2. web service
+3. difference between web application and web service
+4. what web server
+5. how spring boot handling request internally
+6. which one is the entry point spring boot application
+7. @SpringBootApplication
+8. application.properties
+9.difference between properties and yaml
+10. spring boot web
+11. spring boot starter data jpa
+12. Spring boot secutiry
+13. MySQL driver 
+14. what is dispatcher servlet
+15. difference between @RestController and @Controller
+16. @RequestMapping
+17. @PostMapping, @GetMapping
+18. @RequestBody
+19.@RequestParam and @PathVariable
+20. @Valid 
+21. ResponseEntity class and @ResponseBody
+JPA
+23. what is ORM 
+24. what are tools is used to implement ORM
+25 what is Hibernate..explain in details
+26. what is JPA ? why JPA?
+24. EntityManagerFactory, EntiryManager
+25. what are life cycle methods of EntityManager
+26. what is PersistenceContext?
+27. what is Spring Data JPA?
+28. what is Repository in data jpa? explain all hierarchy and all methods
+29. what is JPQL query, deriver query, named Query
+30. explain @Query annotation
+how to native query or sql query using query annotation
+they may also ask to write logical program  from java may be notepad or eclipse
+
+
+
+
+
+
+
+Bean Thread Safety or not?
+Singleton beans are not thread-safe by default.
+Must use synchronization or design stateless beans.
+-------------------------------------------------------------------
+spring Boot Design Patterns
+Singleton (Beans)
+Factory (Bean creation)
+Proxy (AOP)
+Template Method (JdbcTemplate, RestTemplate)
+Observer (Event handling)
+-------------------------------------------------------------------
+Spring Initializer
+Tool to bootstrap projects.
+Generates starter code with dependencies.
+-----------------------------------------------------
+@JsonManagedReference & @JsonBackReference
+Used to handle bidirectional relationships in JSON serialization.
+Prevents infinite recursion.
+Example: Parent → @JsonManagedReference, Child → @JsonBackReference.
+------------------------------------------------------- 
+yml File
+Alternative to application.properties.
+Uses YAML syntax for hierarchical configuration.
+Example:spring:
+ 
+  datasource:
+ 
+    url: jdbc:mysql://localhost:3306/db
+ 
+    username: root
+ 
+    password: pass
+ 
+yaml
+spring:datasource:url: jdbc:mysql://localhost:3306/dbusername: rootpassword: pass
+---------------------------------------------------------
+By default, Spring Boot loads application.properties or application.yml from:
+src/main/resources/
+config/ folder (higher priority)
+You can define profile-specific files:
+application-dev.properties
+application-prod.properties
+application-test.properties
+-------------------------------------------------------------
+ 
+ 
+---> When They Are Called
+Spring Boot decides which file to load based on the active profile:
+Default profile
+If no profile is set, it loads application.properties.
+Profile-specific
+If you set spring.profiles.active=dev, 
+then application-dev.properties is loaded in addition to the default application.properties.
+Profile-specific values override the defaults.
